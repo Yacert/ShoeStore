@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    color: #000000;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* pour footer sticky */
+}
+
+/* Tout le contenu principal prend l'espace restant */
+main {
+    flex: 1;
+}
+
+/* HEADER */
+header {
+    background: #000;
+    color: #fff;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #e63946;
+}
+
+nav a {
+    color: #fff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    height: 150vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("https://images.pexels.com/photos/5584997/pexels-photo-5584997.jpeg") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #e63946;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* SECTIONS */
+section {
+    padding: 60px 40px;
+    background: rgb(129, 135, 162);
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+
+.feature {
+    background: #f1f1f1;
+    padding: 20px 10px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image des features */
+.feature img.feature-img {
+    width: 300px;         /* largeur fixe */
+    height: 300px;        /* hauteur fixe */
+    object-fit: contain;  /* ajuste l'image sans la déformer */
+    margin-bottom: center /* espace entre l'image et le texte */
+}
+
+
+/* BASE FEATURE */
+.feature {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 80px 30px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* OVERLAY POUR LISIBILITÉ */
+.feature::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+}
+
+/* TEXTE AU-DESSUS DE L’IMAGE */
+.feature h3,
+.feature p {
+    position: relative;
+    z-index: 1;
+}
+
+/* IMAGES DES FEATURES */
+.feature-1 {
+    background-image: url("images/feature-livraison.jpg");
+}
+
+.feature-2 {
+    background-image: url("https://images.pexels.com/photos/6692037/pexels-photo-6692037.jpeg");
+}
+
+.feature-3 {
+    background-image: url("images/feature-paiement.jpg");
+}
+
+/* PRODUITS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
+
+.product {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.product img {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.price {
+    color: #e63946;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* DETAIL PRODUIT */
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.product-detail img {
+    width: 100%;
+}
+
+/* PANIER */
+.cart {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: none;
+    }
+}
